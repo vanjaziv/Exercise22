@@ -14,12 +14,21 @@ public class Mitarbeiter1 {
         return taxableincome;
     }
     public double incomeTax(double taxableincome)
-    {
-        if(taxableincome<=10000)
-            tax=(0.1 * 10000);
-        else if(taxableincome>=10000 && taxableincome<=20000)
-            tax=(
-        //else if (taxableincome>=20000 && taxableincome<=30000)
+    {   double taxincome = 0;
+        if(taxableincome<=10000){
+            tax=(0.1 * 10000);}
+        else if(taxableincome>=10000 && taxableincome<=20000){
+            taxincome = (taxableincome - 10000);
+            tax=(1000 + (0.2*taxincome));}
+        else if (taxableincome>=20000 && taxableincome<=30000){
+            taxincome = (taxableincome - 20000);
+            tax=(3000 + (0.32 * taxincome));}
+        else if (taxableincome>=30000 && taxableincome<=50000){
+            taxincome = (taxableincome - 30000);
+            tax=(6200 + (0.45 * taxincome));}
+        else if (taxableincome>50000){
+            taxincome = (taxableincome - 50000);
+            tax=(0.6 * taxincome);}
 
         return tax;
     }
